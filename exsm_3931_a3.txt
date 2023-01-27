@@ -1,0 +1,72 @@
+//psuedocode in the view of hungry customer//
+//“I am an investor looking to hire an engineer to turn my idea into reality… I picture a
+machine which contains snack sized chips and candy packs. If a hungry customer
+arrives and sees a snack that they like, they can simply put coins into the machine,
+enter the code of the snack they desire, and the machine will give them the snack they
+chose along with any change that may be owed to them."//
+
+money = 5.00
+change = 0
+vending_stock_cost = { candy: 3.00, chips: 1.50, chocolate_bars: 2.00 }
+vending_inventory = { candy: 10, chips: 10, chocolate_bars = 5}
+choice = ""
+
+View vending machine options and prices
+input choice 
+if choice vending_inventory = 0 {
+    print error message "This item is out of stock, please pick a new option"
+}
+insert money
+while money < cost {
+    insert more money
+}
+machine dispenses item
+if money given > than cost {
+    machine returns change
+}
+take items and leave
+
+
+//psuedocode in the view of machine owner//
+//"For myself, as the owner, I would need to unlock the machine with a key to regularly 
+check the machine to make sure that I have enough snacks for sale, and to empty 
+out the coin storage within the machine. Every time I check the machine, I presume 
+that something has been sold, so I would need to restock the machine.”//
+
+vending_stock_limit = { candy: 10, chips: 10, chocolate_bars: 5}
+vending_inventory = { candy: 10, chips: 9 chocolate_bars = 4}
+is_coin_storage_open = false
+is_locked = true
+coin_storage_total = 5.00
+pocket = 0
+
+FUNCTION open_machine () {
+    is_locked = false
+    open machine
+}
+
+FUNCTION empty_coin_storage () {
+    is_coin_storage_open = true
+    if coin_storage_total > 0 then
+        pocket = coin_storage_total
+        coin_storage_total = 0
+        is_coin_storage_open = false
+    else then
+       is_coin_storage_open = false
+}
+
+FUNCTION restock_machine () {
+    while vending_inventory < vending_stock_limit do
+        increase vending_inventory    
+}
+
+FUNCTION close_machine () {
+    close machine
+    is_locked = true
+    
+}
+
+open_machine
+empty_coin_storage
+restock_machine
+close_machine
